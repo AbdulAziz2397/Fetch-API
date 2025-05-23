@@ -10,15 +10,24 @@ function renderCrad() {
     }
 
     for (let i = 0; i < data.length; i++) {
-
+        console.log(Math.round(data[i].rating))
+        console.log(data[i].title)
         prodContain.innerHTML += `
         <div class="card">
             <img class="image" src=${data[i].images[0]} alt="">
             <span class="brand">${data[i].brand}</span>
             <h4 class="title">${data[i].title}</h4>
+            <span class="rating">
+                <i class="fa-solid fa-star" style="color: ${Math.round(data[i].rating) >= 1 ? "orange" : "black"} "></i>
+                <i class="fa-solid fa-star"  style="color: ${Math.round(data[i].rating) >= 2 ? "orange" : "black"} "></i>
+                <i class="fa-solid fa-star"  style="color: ${Math.round(data[i].rating) >= 3 ? "orange" : "black"} "></i>
+                <i class="fa-solid fa-star"  style="color: ${Math.round(data[i].rating) >= 4 ? "orange" : "black"} "></i>
+                <i class="fa-solid fa-star"  style="color: ${Math.round(data[i].rating) >= 5 ? "orange" : "black"} "></i> 
+            </span>
             <span class="price">$${data[i].price}</span>
         </div>
         `;
+        
     }
 }
 

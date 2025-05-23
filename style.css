@@ -7,12 +7,14 @@
 
 body {
     padding: 40px;
-    background: #f2f1f8;
+    background: #f8f7fd; /* Soft off-white with purple tint */
     margin: auto;
+    color: #333;
 }
 
+/* ---------- Product Container ---------- */
 #products {
-    background: white;
+    background: #ffffff;
     border-radius: 20px;
     padding: 20px;
     display: grid;
@@ -22,17 +24,17 @@ body {
 
 /* ---------- Card Styling ---------- */
 .card {
-    background: #fff;
+    background: #ffffff;
     border-radius: 12px;
     overflow: hidden;
-    border: 1px solid #e0d8f5;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e0d7ff;
+    box-shadow: 0 10px 20px rgba(140, 93, 233, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(140, 93, 233, 0.2);
 }
 
 /* ---------- Image Styling ---------- */
@@ -45,25 +47,49 @@ body {
 /* ---------- Brand Styling ---------- */
 .brand {
     display: block;
-    color: #7c3aed;
+    color: #7e3ff2; /* Purple */
+    text-transform: uppercase;
+    font-size: 12px;
     font-weight: bold;
     margin: 12px 16px 4px;
-    font-size: 0.9rem;
 }
 
 /* ---------- Title Styling ---------- */
 .title {
-    margin: 0 16px;
-    font-size: 1.1rem;
+    margin: 10px 16px;
+    font-size: 1.2rem;
     font-weight: 600;
-    color: #333;
+    color: #4a327c;
 }
 
 /* ---------- Price Styling ---------- */
 .price {
     display: block;
-    margin: 12px 16px 16px;
-    font-size: 1rem;
+    margin: 16px 16px 10px;
+    font-size: 16px;
+    color: #5e35b1; /* Purple tone */
     font-weight: bold;
-    color: #2c2c2c;
+}
+
+/* ---------- Rating Styling ---------- */
+.rating {
+    margin: 16px 16px 16px;
+}
+
+/* ---------- Responsive Design ---------- */
+@media (max-width: 425px) {
+    body {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 380px) {
+    body {
+        padding: 0;
+    }
+
+    #products {
+        padding: 10px;
+        gap: 20px;
+    }
 }
