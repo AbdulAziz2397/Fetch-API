@@ -10,13 +10,13 @@ function renderCrad() {
     }
 
     for (let i = 0; i < data.length; i++) {
-        
+
         prodContain.innerHTML += `
         <div class="card">
-            <img class="image" src="" alt="">
-            <span class="brand"></span>
-            <h4 class="title"></h4>
-            <span class="price"></span>
+            <img class="image" src=${data[i].images[0]} alt="">
+            <span class="brand">${data[i].brand}</span>
+            <h4 class="title">${data[i].title}</h4>
+            <span class="price">$${data[i].price}</span>
         </div>
         `;
     }
@@ -26,8 +26,8 @@ async function fetchData() {
     try {
         let response = await fetch('https://dummyjson.com/products')
         response = await response.json();
-        data = response;
-        console.log(data.products)
+        data = response.products;
+        console.log(data)
     }
     catch (error) {
         console.error(error);
