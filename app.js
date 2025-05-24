@@ -5,7 +5,7 @@ let data = [];
 
 function renderCrad() {
     if (data.length < 1) {
-        prodContain.innerHTML += `<span>No Data Found..!</span>`;
+        prodContain.innerHTML = `<span>No Data Found..!</span>`;
         return
     }
 
@@ -13,7 +13,7 @@ function renderCrad() {
         console.log(Math.round(data[i].rating))
         console.log(data[i].title)
         prodContain.innerHTML += `
-        <div class="card">
+        <div class="card" onClick="explore()">
             <img class="image" src=${data[i].images[0]} alt="">
             <span class="brand">${data[i].brand}</span>
             <h4 class="title">${data[i].title}</h4>
@@ -24,7 +24,10 @@ function renderCrad() {
                 <i class="fa-solid fa-star"  style="color: ${Math.round(data[i].rating) >= 4 ? "orange" : "black"} "></i>
                 <i class="fa-solid fa-star"  style="color: ${Math.round(data[i].rating) >= 5 ? "orange" : "black"} "></i> 
             </span>
-            <span class="price">$${data[i].price}</span>
+            <div class="prcBtn">
+                <span class="price">$${data[i].price}</span>
+                <button class="buyBtn">Buy Now</button>
+            </div>
         </div>
         `;
         
